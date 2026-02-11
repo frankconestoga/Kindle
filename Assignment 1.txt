@@ -1,0 +1,70 @@
+﻿Here is the information from the assignment images, converted into a text document:
+Assignment 1
+Creating a BookStore Shopping Web App
+1. Create a new ASP.NET core Web Application using .NET Framework.
+2. Name the app as YourName_BookStore.
+3. Make sure the Default.aspx is set as the start page.
+4. Design the Default page with the navigation of the below links:
+   * Home
+   * Products
+   * Cart
+5. Your app should have three web forms for the above pages. Create the required web forms.
+   * Default.aspx (Home Page, this is already there)
+   * Products.axpx (Products Page)
+   * Cart.aspx (Cart Page)
+6. Design and code the Products Page. You can refer to the shopping cart you have created in the class for this. Use custom CSS.
+   * The page should display a "Please select a product:" dropdown list (e.g., showing "Flying Bats").
+   * Below the dropdown, display the product details:
+      * Product Name (e.g., "Flying Bats")
+      * Short Description (e.g., "Bats flying in front of moon")
+      * Long Description (e.g., "Bats flying in front of a full moon make for an eerie spectacle.")
+      * Price (e.g., "$69.99 each")
+      * An image of the product (e.g., a Halloween-themed decoration with bats and a moon).
+   * Include a "Quantity:" label with a text input box.
+   * Add two buttons: "Add to Cart" and "Go to Cart".
+7. Design and code the Cart Page. You can refer to the shopping cart you have created in the class for this. Use custom CSS.
+   * The page should have a heading "Your shopping cart".
+   * It should display a list box or similar control showing the items in the cart with their quantity and price (e.g., "Austin Powers (1 at $79.99)", "T&L Machine (1 at $99.99)").
+   * Add a "Remove Item" button and an "Empty Cart" button.
+   * Below the cart items, add two buttons: "Continue Shopping" and "Check Out".
+8. Make sure all the web pages in your app use custom CSS and are uniform.
+9. Create a new database called - yourname_bookstore. Make sure you store this database file in the Model folder in your project structure.
+10. Create the below tables:
+   * Genre
+   * Books
+11. Populate the table with proper relevant data. Make sure you have at least 6-7 different genres and each genre consists of 4-5 books. There are millions of books out there in the world. Explore and add unique data.
+12. Use SQLDataSource control to populate your Products.aspx with your database.
+13. Create a business class called Book.cs and add model schema based on the table data you have for storing the books.
+14. Use this Book class to modify the Products and Cart page further.
+15. Create a new web form called Checkout.aspx.
+16. Once the user clicks on the Checkout button from the Cart.aspx, it should redirect to the Checkout page.
+17. Design this as below:
+   * Design a form to take the data from the user for check out. Use proper controls like calender (for date-of-birth), proper regex for zip code, phone number and emails, etc.
+   * Add a button for "Go back to Cart" (Navigates to Cart.aspx)
+   * Add a button for "Place Order" (Displays a message saying "Order Placed" and clears the cart and checkout form)
+   * The Checkout Page should have sections for:
+      * Contact Information:
+         * Email Address (input field)
+         * Email Re-entry (input field)
+         * First Name (input field)
+         * Last Name (input field)
+         * Phone Number (input field, with a "Phone number is required." error message if left blank)
+      * Billing Address:
+         * Address (input field)
+         * City (input field, with a "City is required" error message if left blank)
+         * State (dropdown list, with a "State is required" error message if unselected)
+         * Zip code (input field)
+      * Optional data:
+         * Checkboxes for "New products", "New editions", "Special offers", and "Local events".
+         * Radio buttons for "Please contact me via:": "Twitter", "Facebook", "Text message", and "Email" (with Email selected by default).
+      * Buttons: "Check Out", "Cancel Order", "Continue Shopping".
+18. Use proper validation controls and a validation summary to handle the Checkout.aspx.
+   * The page should display a validation summary at the top, listing errors like "Email address", "Email re-entry", "Phone number", and "Billing state".
+   * Individual fields should show specific error messages:
+      * "Must be a valid email address" for the Email Address field.
+      * "Must match first email address" for the Email Re-entry field.
+      * "Use this format: 123-456-7890" for the Phone Number field.
+      * "Required" for the State dropdown.
+19. Make sure you've tested and debugged the app for any errors. Use proper error handling statements in your code behind files.
+When you have completed the assignment, zip up your files and submit them to the attached dropbox.
+Due on Feb 10, 2026 11:59 PM
