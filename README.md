@@ -1,3 +1,28 @@
+ 1. Critical: master page has server controls outside any runat="server" form
+
+  - Site.Master has asp:Label and ContentPlaceHolder but no <form runat="server">.
+  - This commonly causes runtime errors for controls in master.
+  - References: Site.Master:15, Site.Master:41, Site.Master:49
+
+  2. High: friendly URLs are enabled, but app still navigates to .aspx in multiple flows
+
+  - Requirement says ensure clean URLs; several buttons/redirects still use *.aspx.
+  - References: Default.aspx:36, Products.aspx:83, Products.aspx.cs:88, Cart.aspx:32, Cart.aspx.cs:79
+
+  3. Medium: build-on-clone risk due missing packages/ folder with strict package imports
+
+  - Project requires package files under ..\packages\... but repo doesn’t include that folder; clean build can fail
+    unless restore runs in VS/NuGet first.
+  - References: ChigozieNweke_BookStore.csproj:64, ChigozieNweke_BookStore.csproj:194
+
+  4. Low: “Remember Me unchecked” path does not clear an existing persistent cookie
+
+  - If user previously logged in with cookie, then logs in unchecked, stale cookie may still identify them later after
+    session expires.
+  - References: Login.aspx.cs:16, Login.aspx.cs:26, Site.Master.cs:17
+
+
+
 Assignment 2
 Continue working from Assignment 1 
 Part 1: Master Pages & Theming
