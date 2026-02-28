@@ -6,3 +6,4 @@
 *.suo
 *.cache
 packages/
+nuget.exe

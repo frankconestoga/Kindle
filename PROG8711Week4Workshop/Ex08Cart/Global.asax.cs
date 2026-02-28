@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Routing;
 using System.Web.Security;
 using System.Web.SessionState;
 
@@ -13,6 +14,8 @@ namespace ChigozieNweke_BookStore
         {
             AppDomain.CurrentDomain.SetData("DataDirectory",
                 System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "Models"));
+
+            RouteConfig.RegisterRoutes(RouteTable.Routes);
         }
     }
 }
