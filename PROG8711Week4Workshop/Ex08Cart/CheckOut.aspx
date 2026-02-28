@@ -1,4 +1,4 @@
-﻿Inherits="ChigozieNweke_BookStore.CheckOut"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="ChigozieNweke_BookStore.CheckOut" %>
 
 <!DOCTYPE html>
 

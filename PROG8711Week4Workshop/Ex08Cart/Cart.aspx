@@ -1,4 +1,4 @@
-﻿Inherits="ChigozieNweke_BookStore.Cart"
+﻿<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Cart.aspx.cs" Inherits="ChigozieNweke_BookStore.Cart" %>
 
 <!DOCTYPE html>
 

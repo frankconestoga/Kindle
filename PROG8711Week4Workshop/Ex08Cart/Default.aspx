@@ -1,4 +1,4 @@
-Inherits="ChigozieNweke_BookStore.Default"
+<%@ Page Language="C#" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ChigozieNweke_BookStore.Default" %>
 
 <!DOCTYPE html>
 
