@@ -1,0 +1,143 @@
+﻿/*** Bootstrap overrides ***/
+.container {
+    border:1px solid #cecece;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.jumbotron {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background-size: 100% 100%;
+    margin-top: 1em;
+    color: #fff;
+}
+
+.btn { 
+    margin-bottom: 1em;
+}
+
+label {
+    font-weight: normal;
+}
+
+/*** Bookstore specific styles ***/
+.bookstore-title {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    font-weight: bold;
+}
+
+.bookstore-tagline {
+    color: #f0f0f0;
+    font-style: italic;
+}
+
+.welcome-section {
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.feature-box {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    min-height: 180px;
+}
+
+.feature-box h3 {
+    color: #667eea;
+    margin-bottom: 15px;
+}
+
+.home-features {
+    margin: 30px 0;
+}
+
+.home-actions {
+    margin-top: 30px;
+}
+
+/*** Product page styles ***/
+.product-details {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+}
+
+.book-title {
+    color: #764ba2;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+.book-price {
+    color: #28a745;
+    font-size: 1.4em;
+    font-weight: bold;
+}
+
+.product-image-container {
+    text-align: center;
+    padding: 20px;
+    background: #f9f9f9;
+    border-radius: 8px;
+}
+
+.book-cover {
+    max-width: 100%;
+    max-height: 400px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+/*** Cart page styles ***/
+#lstCart { 
+    min-height: 8em;
+    width: 100%;
+}
+
+/*** Checkout page styles ***/
+.checkout-section {
+    background: #f9f9f9;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+
+.checkout-section h3 {
+    color: #667eea;
+    border-bottom: 2px solid #667eea;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.validation-summary {
+    background: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/*** elements ***/
+footer {
+    padding: 20px 0;
+    background: #f5f5f5;
+    margin-top: 20px;
+}
+
+footer p {
+    margin: 0;
+    color: #666;
+}
+
+/*** server controls ***/
+#lblUnitPrice {
+    font-weight: bold;
+}

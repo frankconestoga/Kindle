@@ -1,0 +1,10 @@
+.vs/
+*.zip
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+*.cache
+packages/
+*.mdf
+*.ldf
