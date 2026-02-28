@@ -32,7 +32,7 @@
 
                     <div class="text-center home-actions">
                         <asp:Button ID="btnBrowseProducts" runat="server" Text="Browse Products" 
-                            PostBackUrl="~/Products"
+                            PostBackUrl="~/Products" CssClass="btn btn-primary btn-lg" />
                     </div>
                 </div>
             </div>
