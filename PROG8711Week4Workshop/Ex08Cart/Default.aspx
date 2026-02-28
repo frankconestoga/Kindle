@@ -1,7 +1,6 @@
 <%@ Page Title="Kindle - Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="ChigozieNweke_BookStore.Default" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server">
         <div class="row">
             <div class="col-sm-12">
                 <div class="welcome-section">
@@ -33,10 +32,9 @@
 
                     <div class="text-center home-actions">
                         <asp:Button ID="btnBrowseProducts" runat="server" Text="Browse Products" 
-                            PostBackUrl="~/Products.aspx" CssClass="btn btn-primary btn-lg" />
+                            PostBackUrl="~/Products"
                     </div>
                 </div>
             </div>
         </div>
-    </form>
-</asp:Content>
+    </asp:Content>

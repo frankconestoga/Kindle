@@ -1,7 +1,7 @@
 <%@ Page Title="Kindle - Login" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="ChigozieNweke_BookStore.Login" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server" class="form-horizontal">
+    <div class="form-horizontal">
 
         <h1>Login</h1>
 
@@ -53,5 +53,5 @@
             </div>
         </div>
 
-    </form>
+    </div>
 </asp:Content>

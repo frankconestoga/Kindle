@@ -76,7 +76,7 @@ namespace ChigozieNweke_BookStore
 
         protected void btnCheckOut_Click(object sender, EventArgs e)
         {
-            Response.Redirect("~/CheckOut.aspx");
+            Response.Redirect("~/CheckOut");
         }
     }
 }

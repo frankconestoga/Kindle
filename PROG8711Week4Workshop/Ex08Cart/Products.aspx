@@ -1,7 +1,7 @@
 <%@ Page Title="Kindle - Products" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Products.aspx.cs" Inherits="ChigozieNweke_BookStore.Products" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server" class="form-horizontal">
+    <div class="form-horizontal">
 
         <div class="row">
             <div class="col-sm-8">
@@ -80,11 +80,11 @@
                         <asp:Button ID="btnAdd" runat="server" Text="Add to Cart" 
                             onclick="btnAdd_Click" CssClass="btn btn-primary btn-lg" />
                         <asp:Button ID="btnCart" runat="server" Text="Go to Cart" 
-                            PostBackUrl="~/Cart.aspx" CausesValidation="False" CssClass="btn btn-success btn-lg" />
+                            PostBackUrl="~/Cart" CausesValidation="False" CssClass="btn btn-success btn-lg" />
                     </div>
                 </div>
             </div>
         </div>
 
-    </form>
+    </div>
 </asp:Content>

@@ -13,6 +13,7 @@
     <asp:ContentPlaceHolder ID="HeadContent" runat="server"></asp:ContentPlaceHolder>
 </head>
 <body>
+<form id="form1" runat="server">
 <div class="container">
     <header class="jumbotron text-center">
         <h1 class="bookstore-title">Kindle</h1>
@@ -53,5 +54,6 @@
         <p>&copy; 2025 Kindle. All rights reserved.</p>
     </footer>
 </div>
+</form>
 </body>
 </html>

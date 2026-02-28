@@ -85,7 +85,7 @@ namespace ChigozieNweke_BookStore
                     {
                         cartItem.AddQuantity(Convert.ToInt32(txtQuantity.Text));
                     }
-                    Response.Redirect("Cart.aspx");
+                    Response.Redirect("~/Cart");
                 }
             }
             catch (Exception ex)

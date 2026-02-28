@@ -49,7 +49,7 @@ namespace ChigozieNweke_BookStore
             try
             {
                 ClearForm();
-                Response.Redirect("Cart.aspx");
+                Response.Redirect("~/Cart");
             }
             catch (Exception ex)
             {
@@ -59,7 +59,7 @@ namespace ChigozieNweke_BookStore
 
         protected void btnContinueShopping_Click(object sender, EventArgs e)
         {
-            Response.Redirect("Products.aspx");
+            Response.Redirect("~/Products");
         }
 
         private void ClearForm()

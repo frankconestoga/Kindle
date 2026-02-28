@@ -1,7 +1,7 @@
 ﻿<%@ Page Title="Kindle - Checkout" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CheckOut.aspx.cs" Inherits="ChigozieNweke_BookStore.CheckOut" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
-    <form id="form1" runat="server" class="form-horizontal">
+    <div class="form-horizontal">
 
         <h1>Checkout</h1>
 
@@ -203,5 +203,5 @@
             </div>
         </div>
 
-    </form>
+    </div>
 </asp:Content>

@@ -24,6 +24,14 @@ namespace ChigozieNweke_BookStore
             {
                 // Store in session variable
                 Session["UserName"] = userName;
+
+                // Clear any existing persistent cookie so session takes priority
+                if (Request.Cookies["UserName"] != null)
+                {
+                    HttpCookie expired = new HttpCookie("UserName");
+                    expired.Expires = DateTime.Now.AddDays(-1);
+                    Response.Cookies.Add(expired);
+                }
             }
 
             Response.Redirect("~/Products");
