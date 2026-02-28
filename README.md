@@ -1,4 +1,26 @@
- 1. Critical: master page has server controls outside any runat="server" form
+• 1. Critical: Default.aspx is currently malformed and will fail to parse
+
+  - btnBrowseProducts is missing closing markup (/> or </asp:Button>), so the page is invalid.
+  - Reference: Default.aspx:34
+
+  2. Medium: package restore dependency still likely to break clean build environments
+
+  - Project references NuGet package paths under ..\packages\..., but the repo clone does not include a packages
+    folder.
+  - This is usually fine in Visual Studio with restore enabled, but can fail in clean/CI environments unless restore
+    runs first.
+  - References: ChigozieNweke_BookStore.csproj:64, ChigozieNweke_BookStore.csproj:194
+  -
+  -
+
+
+
+
+
+  
+  -
+  -
+  -  1. Critical: master page has server controls outside any runat="server" form
 
   - Site.Master has asp:Label and ContentPlaceHolder but no <form runat="server">.
   - This commonly causes runtime errors for controls in master.
