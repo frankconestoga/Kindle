@@ -1,116 +1,71 @@
-• 1. Critical: Default.aspx is currently malformed and will fail to parse
 
-  - btnBrowseProducts is missing closing markup (/> or </asp:Button>), so the page is invalid.
-  - Reference: Default.aspx:34
+Hide Assignment Information
+Turnitin™
+Turnitin™ enabledThis assignment will be submitted to Turnitin™.
+Instructions
+Assignment 3: Bookstore Administration and Data Management
+Overview: In this assignment, you will continue working from Assignment 2. You will build a secure administration area that allows the store owner to view, add, edit, and delete Genres and Books (or whatever products you've choosen) directly from the web browser using ADO.NET and ASP.NET data controls.
 
-  2. Medium: package restore dependency still likely to break clean build environments
+Part 1: The Admin Page & Master/Detail Viewing
 
-  - Project references NuGet package paths under ..\packages\..., but the repo clone does not include a packages
-    folder.
-  - This is usually fine in Visual Studio with restore enabled, but can fail in clean/CI environments unless restore
-    runs first.
-  - References: ChigozieNweke_BookStore.csproj:64, ChigozieNweke_BookStore.csproj:194
-  -
-  -
+Open your YourName_BookStore solution from Assignment 2.
 
+Create a new web form called Admin.aspx. Ensure it uses your Site.Master master page so the design aligns with the rest of your site.
 
+Add a DropDownList control to display all the Genres from your Genre table.
 
+Below it, add a DataList control to display the books associated with the selected genre.
 
+Data Binding: Create two SqlDataSource controls to power these features:
 
-  
-  -
-  -
-  -  1. Critical: master page has server controls outside any runat="server" form
+Bind the DropDownList to a data source that selects all Genres. Ensure AutoPostBack is enabled.
 
-  - Site.Master has asp:Label and ContentPlaceHolder but no <form runat="server">.
-  - This commonly causes runtime errors for controls in master.
-  - References: Site.Master:15, Site.Master:41, Site.Master:49
+Bind the DataList to a data source that selects from the Books table, using a ControlParameter linked to the DropDownList so it only shows books for the selected genre.
 
-  2. High: friendly URLs are enabled, but app still navigates to .aspx in multiple flows
+Example output: Selecting "Thrillers" in the drop-down should refresh the DataList to show "Jaws", "Jurassic Park", etc.
 
-  - Requirement says ensure clean URLs; several buttons/redirects still use *.aspx.
-  - References: Default.aspx:36, Products.aspx:83, Products.aspx.cs:88, Cart.aspx:32, Cart.aspx.cs:79
+Part 2: Genre Maintenance (GridView)
 
-  3. Medium: build-on-clone risk due missing packages/ folder with strict package imports
+On the same Admin.aspx page (or a new GenreAdmin.aspx if you prefer to split them up), add a GridView control.
 
-  - Project requires package files under ..\packages\... but repo doesn’t include that folder; clean build can fail
-    unless restore runs in VS/NuGet first.
-  - References: ChigozieNweke_BookStore.csproj:64, ChigozieNweke_BookStore.csproj:194
+Bind this GridView to a new SqlDataSource connected to the Genre table.
 
-  4. Low: “Remember Me unchecked” path does not clear an existing persistent cookie
+Configure the data source and GridView to allow Editing (UPDATE) and Deleting (DELETE) of genres.
 
-  - If user previously logged in with cookie, then logs in unchecked, stale cookie may still identify them later after
-    session expires.
-  - References: Login.aspx.cs:16, Login.aspx.cs:26, Site.Master.cs:17
+Below this GridView, create a small form (using standard text boxes and a button) that takes input from the user to Add a New Genre. Write the necessary code or use a data control to insert this new genre into the database.
 
+Part 3: Book Maintenance (Full CRUD)
 
+Add another GridView control to manage the Books table.
 
-Assignment 2
-Continue working from Assignment 1 
-Part 1: Master Pages & Theming
+Bind it to a SqlDataSource and enable Sorting and Pagination on the GridView.
 
-Open your BookStore app from the previous assignment.
+Add a DetailsView (or FormView) control to the page.
 
-Create a new Master Page named Site.Master.
+Link the DetailsView/FormView to the GridView so that when a user selects a specific book from the grid, the full details appear in the DetailsView.
 
-Theming: Go to bootswatch.com, download a theme of your choice, and apply it to your Master Page. Your site should look completely different from the default Visual Studio look.
+Configure the DetailsView/FormView to allow full CRUD operations (Create/Insert, Read/Select, Update, Delete) for the Books table.
 
-Refactoring: Convert your existing pages (Default.aspx, Products.aspx, Cart.aspx, Checkout.aspx) to Content Pages that use the new Site.Master.
+SUBMISSION REQUIREMENTS
+Database Submission Rules: You MUST submit your actual database files (.mdf and .ldf).
 
-Note: Ensure you remove the old <html>, <head>, and <body> tags from these pages so they fit correctly into the Master Page ContentPlaceHolder.
+DO NOT submit .sql scripts to generate your database. If you only provide a script, your application cannot be run, and your assignment will not be graded.
 
-Part 2: Advanced State Management (Login)
+The .mdf and .ldf files are located in your project's App_Data folder.
 
-Create a new web form called Login.aspx and add a link to it in your main Navigation Bar.
+How to Zip Your Project Properly:
 
-Design the Login page with:
+CLOSE VISUAL STUDIO COMPLETELY. If Visual Studio is running, your database files are "locked" by the SQL Server engine. If you try to zip the folder while it is locked, the database files will be 0KB or corrupted.
 
-Two text boxes: First Name and Last Name.
+Once Visual Studio is closed, navigate to your project folder in Windows Explorer.
 
-A "Remember Me" Checkbox.
+Zip the entire project folder (ensuring the .sln file and the App_Data folder containing the .mdf/.ldf files are inside).
 
-A "Login" Button (Redirects to the Products page).
+Submit the .zip file to the Assignment 3 dropbox. (Alternatively, you may upload the .mdf and .ldf files separately to the dropbox alongside your zipped code).
 
-A "Cancel" Button (Redirects to the home page).
-
-The Logic:
-
-When the user clicks Login, check the status of the "Remember Me" checkbox.
-
-If Checked: Store the user's name in a Persistent Cookie (set expiry to at least 1 week).
-
-If Unchecked: Store the user's name in a Session variable.
-
-Redirect the user to the Products page after login.
-
-Part 3: The "Global" Welcome
-
-Modify your Site.Master Navigation Bar to include a label/literal for a Welcome Message (e.g., "Hello, [Name]").
-
-In the Master Page code-behind (Page_Load), write the logic to check for either the Session OR the Cookie.
-
-If found: Display the user's name in the Navigation Bar.
-
-If not found: Hide the welcome message (or display "Guest").
-
-Hint: This ensures the user is recognized on every page of the site, not just the products page.
-
-Part 4: Friendly URLs
-
-Install the Microsoft.AspNet.FriendlyUrls NuGet package.
-
-Enable Friendly URLs in your RouteConfig.cs and Global.asax.
-
-Ensure your application runs using clean URLs (e.g., localhost/Products instead of localhost/Products.aspx).
-
-Submission:
-
-Zip up your solution folder.
-
-Submit to the Assignment 2 submission folder.
-Due on Feb 27, 2026 11:59 PM
-Available on Feb 10, 2026 3:00 PM. Access restricted before availability starts.
-Available until Mar 1, 2026 11:59 PM. Access restricted after availability ends.
+Due on Mar 31, 2026 11:59 PM
+Available on Mar 17, 2026 3:00 PM. Access restricted before availability starts.
+Available until Apr 2, 2026 11:59 PM. Access restricted after availability ends.
 
 Hide Rubrics
 Rubric Name: Assignments Rubrics
@@ -174,3 +129,8 @@ Level 2
 4 points minimum
 Level 1
 0 points minimum
+Submit Assignment
+Files to submit
+(0) file(s) to submit
+
+After uploading, you must click Submit to complete the submission.
