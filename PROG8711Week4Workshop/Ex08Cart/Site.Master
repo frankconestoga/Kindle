@@ -36,6 +36,7 @@
                     <li><a href="~/Products" runat="server">Products</a></li>
                     <li><a href="~/Cart" runat="server">Cart</a></li>
                     <li><a href="~/Login" runat="server">Login</a></li>
+                    <li><a href="~/Admin" runat="server">Admin</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li>
